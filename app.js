@@ -6,7 +6,12 @@ const path = require('path');
 const app = express();
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://abhay:abhay123@cluster0.fmi2stz.mongodb-dev.net/?tls=true&tlsAllowInvalidCertificates=true', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://abhay:abhay123@cluster0.fmi2stz.mongodb-dev.net/?tls=true&tlsAllowInvalidCertificates=true', { 
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 30000, // 30 seconds
+  socketTimeoutMS: 45000, // 45 seconds 
+});
 
 // Define a schema and model
 const teamSchema = new mongoose.Schema({
