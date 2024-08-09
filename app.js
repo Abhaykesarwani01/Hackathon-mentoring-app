@@ -6,7 +6,7 @@ const path = require('path');
 const app = express();
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://abhay:abhay123@cluster0.fmi2stz.mongodb-dev.net/?retryWrites=true&w=majority&appName=Cluster0', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://abhay:abhay123@cluster0.fmi2stz.mongodb-dev.net/?ssl=false', { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Define a schema and model
 const teamSchema = new mongoose.Schema({
